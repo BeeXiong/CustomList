@@ -60,6 +60,7 @@ namespace CustomList
             return ((IEnumerable<T>)array).GetEnumerator();
         }
 
+        //.Add()
         public void Add(T value)
         {
             bool isTooSmall;
@@ -118,8 +119,47 @@ namespace CustomList
                 return array;
             }
         }
-
-
+        //.Remove
+        public void Remove()
+        {
+            if (first == 0)
+            {
+                throw new System.ArgumentException("Cannot accept a Null Reference. List does not have anything in it");
+            }
+            else
+            {
+                int lastPosition;
+                lastPosition = count;
+                count--;
+                for (int i = 0; i <= count; i++)
+                {
+                    array[i] = array[i + 1];
+                }
+                array[lastPosition] = array[lastPosition + 1];
+            }
+        }
+        public void RemoveAt(int indexer)
+        {
+            if(first == 0)
+            {
+                throw new System.ArgumentException("Cannot accept a Null Reference. List does not have anything in it");
+            }
+            else if(indexer <= count)
+            {
+                int lastPosition;
+                lastPosition = count;
+                count--;
+                for(int i = indexer; i <= count; i++)
+                {
+                    array[i] = array[i + 1];
+                }
+                array[lastPosition] = array[lastPosition + 1];
+            }
+            else
+            {
+                throw new System.ArgumentException("Cannot accept a Null Reference. Indexer is out of the bounds of the array");
+            }
+        }
     }
 
 }

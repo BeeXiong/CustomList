@@ -55,6 +55,7 @@
     <Compile Include="SaveTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CapacityTest.cs" />
+    <Compile Include="RemoveTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomList\CustomList.csproj">
