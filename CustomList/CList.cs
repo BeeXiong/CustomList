@@ -60,6 +60,43 @@ namespace CustomList
             return ((IEnumerable<T>)array).GetEnumerator();
         }
 
+        public static CList<T> operator+ (CList<T> first, CList<T> second)
+        {
+            for(int i = 0; i < second.count; i++)
+            {
+                first.Add(second[i]);
+            }
+            return first;
+        }
+
+        public static CList<T> operator- (CList<T> first, CList<T> second)
+        {
+            CList<T> subtractedList = new CList<T>();
+
+            for (int i = 0; i < second.count; i++)
+            {
+                for (int j = 0; j< first.count; j++)
+                {
+                    if (first[j].Equals(second[i]))
+                    {
+                        first[j] = second[second.count - 1];
+                    }
+                }            
+            }
+            for(int i = 0; i < first.count; i++)
+            {
+                if(first[i].Equals(second[second.count - 1]))
+                {
+                    //do nothing
+                }
+                else
+                {
+                    subtractedList.Add(first[i]);
+                }
+            }
+            return subtractedList;
+        }
+        
         //.Add()
         public void Add(T value)
         {
