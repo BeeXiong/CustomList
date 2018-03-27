@@ -101,12 +101,12 @@ namespace CustomList
         public void Add(T value)
         {
             bool isTooSmall;
-            isTooSmall = checkArrayCapacity();
-            array = increaseArrayCapacity(isTooSmall);
-            insertValue(value);
+            isTooSmall = CheckArrayCapacity();
+            array = IncreaseArrayCapacity(isTooSmall);
+            InsertValue(value);
 
         }
-        public void insertValue(T value)
+        public void InsertValue(T value)
         {
             if (first == 0)
             {
@@ -120,7 +120,7 @@ namespace CustomList
                 count++;
             }
         }
-        public bool checkArrayCapacity()
+        public bool CheckArrayCapacity()
         {
             int capacityChecker;
             capacityChecker= count + 5;
@@ -133,7 +133,7 @@ namespace CustomList
                 return false;
             }
         }
-        public T[] increaseArrayCapacity(bool response)
+        public T[] IncreaseArrayCapacity(bool response)
         {
             if (response == true)
             {
@@ -197,6 +197,25 @@ namespace CustomList
                 throw new System.ArgumentException("Cannot accept a Null Reference. Indexer is out of the bounds of the array");
             }
         }
+        public override string ToString()
+        {
+            T[] parameter = this.array;
+            string convertedString;
+            convertedString = "";
+            StringBuilder sBuilder = new StringBuilder();
+
+            for (int i = 0; i < count; i++)
+            {
+                sBuilder.Append(parameter[i]);
+                if (i < (count - 1))
+                {
+                    sBuilder.Append(",");
+                }
+            }
+            convertedString = sBuilder.ToString();
+            return convertedString;
+        }
+
     }
 
 }

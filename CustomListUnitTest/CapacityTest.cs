@@ -16,8 +16,8 @@ namespace CustomListUnitTest
             CList<int> noValueList = new CList<int>();
             
             //act
-            bool storeValueResult = storeValueList.checkArrayCapacity();
-            bool noValueResult = noValueList.checkArrayCapacity();
+            bool storeValueResult = storeValueList.CheckArrayCapacity();
+            bool noValueResult = noValueList.CheckArrayCapacity();
             //assert
             Assert.IsTrue(storeValueResult);
             Assert.IsFalse(noValueResult);

@@ -58,6 +58,7 @@
     <Compile Include="RemoveTest.cs" />
     <Compile Include="IterationTest.cs" />
     <Compile Include="OperatorTest.cs" />
+    <Compile Include="ToStringTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomList\CustomList.csproj">
