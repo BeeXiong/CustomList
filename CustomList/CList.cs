@@ -215,7 +215,19 @@ namespace CustomList
             convertedString = sBuilder.ToString();
             return convertedString;
         }
+        public CList<T> Zip(CList<T> secondList)
+        {
+            CList<T> firstList = this;
+            CList<T> combinedList = new CList<T>();
 
+            for(int i = 0; i < secondList.count; i++)
+            {
+                combinedList.Add(firstList[i]);
+                combinedList.Add(secondList[i]);
+            }
+
+            return combinedList;
+        }
     }
 
 }

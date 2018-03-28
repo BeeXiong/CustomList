@@ -59,6 +59,7 @@
     <Compile Include="IterationTest.cs" />
     <Compile Include="OperatorTest.cs" />
     <Compile Include="ToStringTest.cs" />
+    <Compile Include="ZipTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomList\CustomList.csproj">
